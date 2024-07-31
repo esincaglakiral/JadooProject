@@ -1,0 +1,27 @@
+﻿
+@model UpdateServiceCommand
+@{
+    ViewData["Title"] = "UpdateService";
+}
+<div class="container">
+    <h1>Hizmet Güncelleme Sayfası</h1>
+
+    <form method="post">
+
+        <input type="hidden" asp-for="ServiceId" />
+        <br />
+        <label>Başlık</label>
+        <input type="text" asp-for="Title" class="form-control" />
+        <br />
+        <label>Açıklama</label>
+        <input type="text" asp-for="Description" class="form-control" />
+        <br />
+        <label>Icon</label>
+        <input type="text" asp-for="Icon" class="form-control" />
+        <br />
+
+        <button class="btn btn-primary">Güncelle</button>
+    </form>
+
+</div>
+
