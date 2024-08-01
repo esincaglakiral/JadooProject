@@ -1,0 +1,43 @@
+﻿
+@model UpdateFeatureCommand
+@{
+    ViewData["Title"] = "UpdateFeature";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Öne Çıkan Güncelleme Sayfası</div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="container">
+                    <div class="form-group">
+                        <form method="post">
+                            <input type="hidden" asp-for="FeatureId" class="form-control" />
+                            <label>Üst Açıklama</label>
+                            <input type="text" asp-for="FirstDescription" class="form-control" />
+                            <br />
+                            <label>Orta Açıklama</label>
+                            <input type="text" asp-for="SecondDescription" class="form-control" />
+                            <br />
+                            <label>Alt Açıklama</label>
+                            <input type="text" asp-for="ThirdDescription" class="form-control" />
+                            <br />
+                            <label>Resim</label>
+                            <input type="text" asp-for="ImageUrl" class="form-control" />
+                            <br />
+                            <input type="submit" class="btn btn-outline-info" value="Güncelle" />
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

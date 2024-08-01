@@ -1,0 +1,51 @@
+﻿
+@model List<GetDestinationQueryResult>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+@{
+    int count = 0;
+ }
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Rota Listesi</div>
+        </div>
+        <div class="card-body">
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Resim</th>
+                        <th>Şehir</th>
+                        <th>Tur Süresi</th>
+                        <th>Fiyat</th>
+                        <th colspan="2" class="text-center">İşlemler</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <th>@count</th>
+                            <td><img src="@item.ImageUrl" style="width:150px;height:80px" /></td>
+                            <td>@item.City</td>
+                            <td>@item.Duration</td>
+                            <td>@item.Price.ToString("N0") ₺</td>
+                            <td style="text-align:center"><a href="/Admin/Destination/DeleteDestination/@item.DestinationId" class="btn btn-outline-danger">Sil</a></td>
+                            <td style="text-align:center"><a href="/Admin/Destination/UpdateDestination/@item.DestinationId" class="btn btn-outline-success">Güncelle</a></td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+            <br />
+            <a href="/Admin/Destination/CreateDestination" class="btn btn-outline-primary">Rota Oluştur</a>
+        </div>
+    </div>
+</div>
+

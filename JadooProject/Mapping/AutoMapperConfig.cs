@@ -13,6 +13,7 @@ using JadooProject.Features.CQRS.Results.ManuelResult;
 using JadooProject.Features.CQRS.Results.NewsResult;
 using JadooProject.Features.Mediator.Commands.ServiceCommands;
 using JadooProject.Features.Mediator.Commands.TestimonialCommands;
+using JadooProject.Features.Mediator.Results.DestinationResults;
 using JadooProject.Features.Mediator.Results.ServiceResult;
 using JadooProject.Features.Mediator.Results.TestimonialResult;
 
@@ -30,6 +31,8 @@ namespace JadooProject.Mapping
             CreateMap<Destination, GetDestinationHomeQueryResult>().ReverseMap();
             CreateMap<Destination, GetLatestDestinationQueryResult>().ReverseMap();
             CreateMap<Destination, GetDestinationDetailsQueryResult>().ReverseMap();
+            CreateMap<GetDestinationByIdQueryResult, UpdateDestinationCommand>();
+
 
 
             CreateMap<Brand, GetBrandQueryResult>().ReverseMap();

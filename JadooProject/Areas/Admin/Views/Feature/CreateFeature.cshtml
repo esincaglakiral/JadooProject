@@ -1,0 +1,41 @@
+﻿@model CreateFeatureCommand
+
+@{
+    ViewData["Title"] = "CreateFeature";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Öne Çıkan Ekleme Sayfası</div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="container">
+                    <div class="form-group">
+                        <form method="post">
+
+                            <label>Üst Açıklama</label>
+                            <input type="text" asp-for="FirstDescription" class="form-control" />
+                            <br />
+                            <label>Orta Açıklama</label>
+                            <input type="text" asp-for="SecondDescription" class="form-control" />
+                            <br />
+                            <label>Alt Açıklama</label>
+                            <input type="text" asp-for="ThirdDescription" class="form-control" />
+                            <br />
+                            <label>Resim</label>
+                            <input type="text" asp-for="ImageUrl" class="form-control" />
+                            <br />
+                            <input type="submit" class="btn btn-outline-primary" value="Ekle" />
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,43 @@
+﻿@model UpdateDestinationCommand
+@{
+    ViewData["Title"] = "UpdateDestination";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Rota Güncelleme Sayfası</div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+
+                <div class="container">
+                    <div class="form-group">
+                        <form method="post">
+                            <input type="hidden" asp-for="DestinationId" class="form-control" />
+                            <label>Resim</label>
+                            <input type="text" asp-for="ImageUrl" class="form-control" />
+                            <br />
+                            <label>Şehir</label>
+                            <input type="text" asp-for="City" class="form-control" />
+                            <br />
+                            <label>Fiyat</label>
+                            <input type="text" asp-for="Price" class="form-control" />
+                            <br />
+                            <label>Tur Süresi</label>
+                            <input type="text" asp-for="Duration" class="form-control" />
+                            <br />
+                            <label>Açklama</label>
+                            <input type="text" asp-for="Description" class="form-control" />
+                            <br />
+                            <input type="submit" class="btn btn-outline-primary" value="Güncelle" />
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

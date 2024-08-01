@@ -7,32 +7,31 @@ namespace JadooProject.DataAccess.Concrete
 {
     public class EfDestinationDal : Repository<Destination>, IDestinationDal
     {
+        private readonly JadooContext _context;
+
         public EfDestinationDal(JadooContext context) : base(context)
         {
+            _context = context;
         }
 
         public int GetDestinationCount()
         {
-            var context = new JadooContext();
-            return context.Destinations.Count();
+            return _context.Destinations.Count();
         }
 
         public List<Destination> GetLast3Destination()
         {
-            var context = new JadooContext();
-            return context.Destinations.OrderByDescending(x => x.DestinationId).Take(3).ToList();
+            return _context.Destinations.OrderByDescending(x => x.DestinationId).Take(3).ToList();
         }
 
         public List<Destination> GetLast6Destination()
         {
-            var context = new JadooContext();
-            return context.Destinations.OrderByDescending(x => x.DestinationId).Take(6).ToList();
+            return _context.Destinations.OrderByDescending(x => x.DestinationId).Take(6).ToList();
         }
 
         public Destination GetLastDestination()
         {
-            var context = new JadooContext();
-            return context.Destinations.OrderByDescending(x => x.DestinationId).Take(1).FirstOrDefault();
+            return _context.Destinations.OrderByDescending(x => x.DestinationId).Take(1).FirstOrDefault();
         }
     }
 }

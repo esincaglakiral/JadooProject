@@ -7,14 +7,16 @@ namespace JadooProject.DataAccess.Concrete
 {
     public class EfNewsDal : Repository<News>, INewsDal
     {
+        private readonly JadooContext _context;
+
         public EfNewsDal(JadooContext context) : base(context)
         {
+            _context = context;
         }
 
         public int GetNewsCount()
         {
-            var context = new JadooContext();
-            return context.News.Count();
+            return _context.News.Count();
         }
     }
 }

@@ -7,14 +7,16 @@ namespace JadooProject.DataAccess.Concrete
 {
     public class EfServiceDal : Repository<Service>, IServiceDal
     {
+        private readonly JadooContext _context;
+
         public EfServiceDal(JadooContext context) : base(context)
         {
+            _context = context;
         }
 
         public int GetServiceCount()
         {
-            var context = new JadooContext();
-            return context.Services.Count();
+            return _context.Services.Count();
         }
     }
 }

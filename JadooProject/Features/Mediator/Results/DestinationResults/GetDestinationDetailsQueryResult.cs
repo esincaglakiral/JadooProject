@@ -1,4 +1,4 @@
-﻿namespace JadooProject.Features.CQRS.Results.DestinationResult
+﻿namespace JadooProject.Features.Mediator.Results.DestinationResults
 {
     public class GetDestinationDetailsQueryResult
     {

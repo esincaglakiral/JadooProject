@@ -7,14 +7,16 @@ namespace JadooProject.DataAccess.Concrete
 {
     public class EFFeatureDal : Repository<Feature>, IFeatureDal
     {
+        private readonly JadooContext _context;
+
         public EFFeatureDal(JadooContext context) : base(context)
         {
+            _context = context;
         }
 
         public int GetFeatureCount()
         {
-            var context = new JadooContext();
-            return context.Features.Count();
+            return _context.Features.Count();
         }
     }
 }

@@ -1,0 +1,54 @@
+﻿﻿
+@model List<GetFeatureQueryResult>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+@{
+    int count = 0;
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Öne Çıkan Listesi</div>
+        </div>
+        <div class="card-body">
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Görsel</th>
+                        <th>Üst Açıklama</th>
+                        <th>Orta Açıklama</th>
+                        <th>Alt Açıklama</th>
+                        <th colspan="2" class="text-center">İşlemler</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <th>@count</th>
+                            <th><img src="@item.ImageUrl" style="width:100px; height:100px" /></th>
+                            <td>@item.FirstDescription</td>
+                            <td>@item.SecondDescription</td>
+                            <td>@item.ThirdDescription</td>
+                            <td><a href="/Admin/Feature/DeleteFeature/@item.FeatureId" class="btn btn-outline-danger">Sil</a></td>
+                            <td><a href="/Admin/Feature/UpdateFeature/@item.FeatureId" class="btn btn-outline-success">Güncelle</a></td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+            <br />
+            <a href="/Admin/Feature/CreateFeature" class="btn btn-outline-primary">Öne Çıkan Ekle</a>
+        </div>
+    </div>
+</div>
+

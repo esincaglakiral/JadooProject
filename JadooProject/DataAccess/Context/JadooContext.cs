@@ -5,10 +5,15 @@ namespace JadooProject.DataAccess.Context
 {
     public class JadooContext: DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
 
-            optionsBuilder.UseSqlServer("server=CAGLA\\SQLEXPRESS;database=JadooProjectDb;integrated security=true; trustServerCertificate=true");
+        //    optionsBuilder.UseSqlServer("server=CAGLA\\SQLEXPRESS;database=JadooProjectDb;integrated security=true; trustServerCertificate=true");
+        //}
+
+
+        public JadooContext(DbContextOptions<JadooContext> options) : base(options)//konfigurasyonu base sınıfından alıyoruz ayarlarnın program.cs içersinde yaptık
+        {
         }
 
 
