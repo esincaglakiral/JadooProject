@@ -31,6 +31,8 @@ namespace JadooProject.Mapping
             CreateMap<Destination, GetDestinationHomeQueryResult>().ReverseMap();
             CreateMap<Destination, GetLatestDestinationQueryResult>().ReverseMap();
             CreateMap<Destination, GetDestinationDetailsQueryResult>().ReverseMap();
+            CreateMap<Destination, GetDefaultDestinationQueryResult>().ReverseMap();
+
             CreateMap<GetDestinationByIdQueryResult, UpdateDestinationCommand>();
 
 

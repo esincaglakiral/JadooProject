@@ -1,0 +1,40 @@
+﻿﻿
+@model List<GetTestimonialForDashboardQueryResult>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Referanslarımız</h3>
+
+        <div class="card-tools">
+            <span class="badge badge-danger">@ViewBag.TestimonialCount</span>
+            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+
+            <ul class="users-list clearfix">
+            @foreach (var item in Model)
+            {
+                <li>
+                    <img src="@item.ImageUrl" alt="User Image" style="width:75px; height:75px;">
+                    <a class="users-list-name" href="#">@item.Name</a>
+                    <span class="users-list-date">@item.Country</span>
+                </li>
+            }
+            </ul>
+  
+        
+        <!-- /.users-list -->
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer text-center">
+        <a href="/Admin/Testimonial/Index/">Tüm Referansları Görüntüle</a>
+    </div>
+    <!-- /.card-footer -->
+</div>

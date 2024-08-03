@@ -1,0 +1,41 @@
+﻿﻿
+@model CreateTestimonialCommand
+@{
+    ViewData["Title"] = "CreateTestimonial";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Referans Ekleme Sayfası</div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="container">
+                    <div class="form-group">
+                        <form method="post">
+
+                            <label>Ad Soyad</label>
+                            <input type="text" asp-for="Name" class="form-control" />
+                            <br />
+                            <label>Yorum</label>
+                            <input type="text" asp-for="Comment" class="form-control" />
+                            <br />
+                            <label>Ülke</label>
+                            <input type="text" asp-for="Country" class="form-control" />
+                            <br />
+                            <label>Resim</label>
+                            <input type="text" asp-for="ImageUrl" class="form-control" />
+                            <br />
+                            <input type="submit" class="btn btn-outline-primary" value="Ekle" />
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -7,6 +7,7 @@ using JadooProject.Features.CQRS.Handlers.DestinationHandlers;
 using JadooProject.Features.CQRS.Handlers.FeatureHandlers;
 using JadooProject.Features.CQRS.Handlers.ManuelHandlers;
 using JadooProject.Features.CQRS.Handlers.NewsHandlers;
+using JadooProject.Features.Mediator.Handlers.DestinationHandlers;
 using JadooProject.Features.Mediator.Handlers.TestimonialHandlers;
 
 namespace JadooProject.Extensions
@@ -25,6 +26,7 @@ namespace JadooProject.Extensions
             services.AddScoped<GetLatestDestinationQueryHandler>();
             services.AddScoped<GetDestinationDashboardQueryHandler>();
             services.AddScoped<GetDestinationHomeQueryHandler>();
+            services.AddScoped<GetDefaultDestinationQueryHandler>();
             services.AddScoped<Features.Mediator.Handlers.DestinationHandlers.GetDestinationDetailsQueryHandler>();
 
 
